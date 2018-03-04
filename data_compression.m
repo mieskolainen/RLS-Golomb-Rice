@@ -1,4 +1,4 @@
-% Lossless compression based on Recursive Least Squares and Colomb-Rice
+% Lossless compression based on Recursive Least Squares and Golomb-Rice
 % coding
 %
 % Mikael Mieskolainen, 2011

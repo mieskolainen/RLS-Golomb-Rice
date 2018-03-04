@@ -1,4 +1,4 @@
-% RLS-Rice/Colomb lossless decoder for 16 bit integers
+% RLS-Rice/Golomb lossless decoder for 16 bit integers
 %
 % w_decompress(input_binary, output_wave) 
 %
@@ -11,7 +11,7 @@
 function w_decompress(input_binary, output_wave)
 
 
-% COLOMB-RICE DECODING
+% GOLOMB-RICE DECODING
 
 % Open the file
 file = fopen(input_binary, 'r');
@@ -83,7 +83,7 @@ audiowrite(output_wave, int16(y), Fs, 'BitsPerSample', 16);
 end
 
 
-% Colomb-Rice code decoder
+% Golomb-Rice code decoder
 % ------------------------------------------------------------------------
 % 
 % Input:    file  =  Filehandle

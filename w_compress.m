@@ -1,4 +1,4 @@
-% RLS-Rice/Colomb lossless encoder (fixed to 16 bit integers)
+% RLS-Rice/Golomb lossless encoder (fixed to 16 bit integers)
 %
 % w_compress(input_wave, output_binary, M, b)
 %
@@ -42,7 +42,7 @@ for n = M+1:L
 end
 
 
-% RICE-COLOMB BINARY ENCODING
+% RICE-GOLOMB BINARY ENCODING
 
 % Open the file
 file = fopen(output_binary, 'w');
@@ -68,7 +68,7 @@ fwrite(file, Fs, 'uint32');
 for i = 1:b:length(e)
     
     if (mod(i,10) || mod(i,21))
-        fprintf('Colomb-Rice encoding on sample: %d / %d \n', i, length(e));
+        fprintf('Golomb-Rice encoding on sample: %d / %d \n', i, length(e));
     end
     
     % This data block
@@ -140,7 +140,7 @@ P = lambda^(-1) * P - lambda^(-1) * k * y' * P;
 end
 
 
-% Colomb-Rice code encoder
+% Golomb-Rice code encoder
 % ------------------------------------------------------------------------
 % 
 % Input:    file  =  Filehandle
