@@ -67,7 +67,7 @@ w_decompress('compressed_M16_b32.bin', 'decompressed.wav');
 % Check that they are exactly same => Lossless
 diff = norm(orig - comp)
 
-d1 = dir('testfile_M16_b32.bin');
+d1 = dir('compressed_M16_b32.bin');
 d2 = dir('mike.wav');
 
 comp_ratio = d1.bytes / d2.bytes;
