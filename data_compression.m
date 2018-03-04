@@ -18,7 +18,8 @@ y = y_orig*2^15;
 [p, xout] = hist(y, -2^15:2^15-1);
 p = p./sum(p);
 
-% Plot of the normalized histogram.
+% Plot of the normalized histogram. We see two-sided geometric
+% distribution, presumably.
 bar(xout, p); set(gca,'yscale','log'); axis([-2^14 2^13 0 inf]);
 xlabel('Symbol (Amplitude)'); ylabel('Probability p(x)');
 
