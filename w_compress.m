@@ -96,7 +96,7 @@ for i = 1:b:length(e)
     
     % Code the values from this block with the best p
     for j = 1:length(data)
-        colombenc(file, data(j), p);
+        golombenc(file, data(j), p);
     end
 end
 
@@ -155,7 +155,7 @@ end
 %
 % Mikael Mieskolainen, 2011
 
-function colombenc(file, S, p)
+function golombenc(file, S, p)
 
 sign_bit = heavi(S);        % Take the sign bit (0,1)
 S = abs(S);                 % Take the absolute value

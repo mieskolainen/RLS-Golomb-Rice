@@ -31,14 +31,14 @@ e_length = e_length + M;
 % Create the error signal vector
 e = zeros(1, e_length);
 
-% Decode Colomb-Rice, start after M zeros of the beginning of e
+% Decode Golomb-Rice, start after M zeros of the beginning of e
 k = 1;
 for i = M+1:b:e_length
     
     if (mod(k,100) == 0)
         fprintf('Colomb-Rice decoding on sample %d / %d \n', i, e_length);
     end
-    e(i:i+b-1) = colombdec(file, b)';
+    e(i:i+b-1) = golombdec(file, b)';
     k = k + 1;
 end
 
@@ -99,7 +99,7 @@ end
 %
 % Mikael Mieskolainen, 2011
 
-function output = colombdec(file, b)
+function output = golombdec(file, b)
 
 p = fread(file, 1, 'ubit4');            % Read the parameter p for this block
 output = zeros(b,1);                    % Output vector (block values)
